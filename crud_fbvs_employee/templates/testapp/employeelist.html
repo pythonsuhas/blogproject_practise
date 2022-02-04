@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%load static%}
+{%block body_block%}
+<div class="">
+  <h1 align='center'>Employee Information Table</h1>
+  <table border="1" align='center'>
+    <thead>
+      <th>Employee Name</th>
+      <th>Employee Number</th>
+      <th>Employee Salary</th>
+      <th>Employee Address</th>
+
+      <th>Update</th>
+      <th>Delete</th>
+    </thead>
+    {%for employees in employee%}
+    <tr>
+      <td>{{employees.ename}}</td>
+      <td>{{employees.eno}}</td>
+      <td>{{employees.esal}}</td>
+      <td>{{employees.eaddr}}</td>
+
+      <td><a href="/update/{{employees.id}}">Update</a></td>
+      <td><a href="/delete/{{employees.id}}">Delete</a></td>
+    </tr>
+    {%endfor%}
+  </table>
+  <br>
+ &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+   <button type="button" name="button"class="btn btn-lg btn-primary" id="homebutton"><a href="/create">Create New Employee Info</a></button>
+</div>
+
+{%endblock%}
